@@ -22,6 +22,10 @@ class Snake:
             else:
                 next_pos = (round(self.positions[i][0]+cos(radians(self.direction*90))),round(self.positions[i][1]+sin(radians(self.direction*90))))
                 if next_pos in self.positions:
+                    for x in range(len(grid)):
+                        for y in range(len(grid[0])):
+                            grid[x][y] = -1
+                    grid[randint(0,len(grid)-1)][randint(0,len(grid[0])-1)] = 1
                     self.reset()
                     break
                 else:

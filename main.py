@@ -20,16 +20,17 @@ class Game:
         self.snake = Snake()
         self.particles = []
     def drawGrid(self):
+        b = 4
         for x in range(len(self.grid)):
             for y in range(len(self.grid[x])):
                 for pos in self.snake.positions:
                     if x == pos[0] and y == pos[1]:
                         if self.snake.positions.index(pos) != (len(self.snake.positions)-1):
-                            pygame.draw.rect(self.display,"white",pygame.rect.Rect(x*tile_size,y*tile_size,tile_size,tile_size))
+                            pygame.draw.rect(self.display,(80,255,50),pygame.rect.Rect((x*tile_size)+b,(y*tile_size)+b,tile_size-b,tile_size-b))
                         else:
-                            pygame.draw.rect(self.display,(200,200,200),pygame.rect.Rect(x*tile_size,y*tile_size,tile_size,tile_size))
+                            pygame.draw.rect(self.display,(80,255,50),pygame.rect.Rect((x*tile_size)+b,(y*tile_size)+b,tile_size-b,tile_size-b))
                 if self.grid[x][y] == 1:
-                    pygame.draw.rect(self.display,"red",pygame.rect.Rect(x*tile_size,y*tile_size,tile_size,tile_size))
+                    pygame.draw.rect(self.display,"red",pygame.rect.Rect((x*tile_size)+b,(y*tile_size)+b,tile_size-b,tile_size-b))
     def drawParticles(self):
         for particle in self.particles:
             if particle.life > 0:
