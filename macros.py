@@ -1,1 +1,1 @@
-tile_size = 10
+tile_size = 24
