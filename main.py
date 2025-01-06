@@ -1,8 +1,3 @@
-"""
-
-
-"""
-
 import pygame
 from random import randint
 from Particle import Particle
