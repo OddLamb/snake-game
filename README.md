@@ -1,4 +1,4 @@
-## A simple snake-game copy
+## Snake game
 <img src="./preview.gif"></img>
 ### Dependencies:
 <ul>
